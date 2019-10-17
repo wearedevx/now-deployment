@@ -19,3 +19,4 @@ jobs:
           github-token: ${{ secrets.BOT_TOKEN }}
           zeit-token: ${{ secrets.ZEIT_TOKEN }}
           #ZEIT_TEAMID: amond
+
