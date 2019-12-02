@@ -1,4 +1,4 @@
-name: deploy website preview
+name: example - static
 on:
   push:
   #  branches:
