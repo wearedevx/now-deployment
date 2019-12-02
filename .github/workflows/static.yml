@@ -1,15 +1,19 @@
-name: production
+name: deploy website preview
 on:
   push:
-    branches:
-      - master
+  #  branches:
+  #    - master
 
 jobs:
-  prod:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: ./
+      - name: static
+        run: |
+          echo 'static example'
+          cd example/static
+      - uses: ../../
         id: now-deployment
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
