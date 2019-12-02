@@ -6,9 +6,6 @@
   "github": {
     "enabled": false
   },
-  "builds": [
-    { "src": "./**", "use": "@now/static" }
-  ],
   "routes": [
     {
       "src": "/(assets/.+|amcharts/.+|.+\\.css|.+\\.js|.+\\.eot|.+\\.svg|.+\\.ttf|.+\\.woff|.+\\.gif|.+\\.png|.+\\.jpg)",

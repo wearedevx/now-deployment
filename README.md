@@ -77,3 +77,8 @@ jobs:
           zeit-team-id: team_XXXXXXXXXXX
           now-args: '--prod'
 ```
+
+
+### Agnular Example
+
+See `example/angular/src/now.json` , 
