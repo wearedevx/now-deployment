@@ -4,7 +4,7 @@ const core = require("@actions/core");
 const github = require("@actions/github");
 const { execSync } = require("child_process");
 const exec = require("@actions/exec");
-const io = require("@actions/io");
+const shell = require("shelljs");
 
 const context = github.context;
 
@@ -59,10 +59,9 @@ async function nowDeploy() {
   };
 
   if (folderDeployPath) {
-    const toolpath = await io.which("cd", true);
     core.info("Folder to deploy", folderDeployPath);
-    core.info("CMD exec", `${toolpath} ${folderDeployPath}`);
-    await exec.exec(`"${toolpath}"`, [folderDeployPath]);
+    const cwd = shell.cd(folderDeployPath);
+    core.info("Changing folder", cwd.toString());
   }
 
   return await exec
