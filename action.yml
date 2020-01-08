@@ -1,33 +1,39 @@
-name: 'ZEIT Now Deployment'
-description: 'This action make a deployment with github actions instead of ZEIT Now builder.'
+name: "ZEIT Now Deployment"
+description: "This action make a deployment with github actions instead of ZEIT Now builder."
 inputs:
   zeit-token:
-    description: 'zeit.co token'
+    description: "zeit.co token"
     required: true
   zeit-team-id:
-    description: ' This is required if your deployment is made on team project.'
+    description: " This is required if your deployment is made on team project."
     required: false
   now-args:
-    description: ''
+    description: ""
     required: false
-    default: ''
-
+    default: ""
+  # now-local-config:
+  #   description: "Path to your Now configuration file. Path is relative to your project root folder or relative to the value set to `now-folder-path` if set."
+  #   required: false
+  #   default: ""
+  now-folder-path:
+    description: "Path to folder where you want to execute the now command. Path is relative to your project root folder."
+    required: false
+    default: ""
   github-token:
     required: true
   github-deployment:
     required: false
-    default: 'false'
-    description: 'if you want to create github deployment, set true, default: false'
-
+    default: "false"
+    description: "if you want to create github deployment, set true, default: false"
 
 outputs:
   preview-url:
-    description: 'deployment preview URL'
+    description: "deployment preview URL"
 
 runs:
-  using: 'node12'
-  main: 'index.js'
+  using: "node12"
+  main: "index.js"
 
 branding:
-  icon: 'check'
-  color: 'black'
+  icon: "check"
+  color: "black"
