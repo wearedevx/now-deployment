@@ -58,8 +58,10 @@ async function nowDeploy() {
   };
 
   if (folderDeployPath) {
+    const toolpath = await io.which("cd", true);
     core.info("Folder to deploy", folderDeployPath);
-    await exec.exec("cd", [folderDeployPath]);
+    core.info("CMD exec", `${toolpath} ${folderDeployPath}`);
+    await exec.exec(`"${toolpath}"`, [folderDeployPath]);
   }
 
   return await exec
